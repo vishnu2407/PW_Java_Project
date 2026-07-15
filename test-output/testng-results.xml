@@ -1,25 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-15T20:08:42 IST" name="Default suite" finished-at="2026-07-15T20:09:21 IST" duration-ms="39454">
+  <suite started-at="2026-07-15T23:45:30 IST" name="PlaywrightSuite" finished-at="2026-07-15T23:46:48 IST" duration-ms="77742">
     <groups>
     </groups>
-    <test started-at="2026-07-15T20:08:42 IST" name="Default test" finished-at="2026-07-15T20:09:21 IST" duration-ms="39454">
-      <class name="Tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.LoginTest@2473d930]" started-at="2026-07-15T20:08:42 IST" name="setup" finished-at="2026-07-15T20:08:43 IST" duration-ms="1770" status="PASS">
+    <test started-at="2026-07-15T23:45:30 IST" name="BasicTests" finished-at="2026-07-15T23:46:48 IST" duration-ms="77742">
+      <class name="Tests.Test1">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.Test1@149e0f5d]" started-at="2026-07-15T23:45:30 IST" name="setup" finished-at="2026-07-15T23:45:35 IST" duration-ms="4198" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="test()[pri:0, instance:Tests.LoginTest@2473d930]" started-at="2026-07-15T20:08:43 IST" name="test" finished-at="2026-07-15T20:09:21 IST" duration-ms="37478" status="PASS">
+        <test-method signature="verifyPage()[pri:0, instance:Tests.Test1@149e0f5d]" started-at="2026-07-15T23:45:35 IST" name="verifyPage" finished-at="2026-07-15T23:46:07 IST" duration-ms="32054" status="FAIL">
+          <exception class="com.microsoft.playwright.TimeoutError">
+            <message>
+              <![CDATA[Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at _ProgressController.run (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:11750:32)
+    at _FrameDispatcher._runCommand (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18203:35)
+    at DispatcherConnection.dispatch (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18408:44)
+}
+Call log:
+-   - navigating to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login", waiting until "load"
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at _ProgressController.run (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:11750:32)
+    at _FrameDispatcher._runCommand (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18203:35)
+    at DispatcherConnection.dispatch (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18408:44)
+}
+Call log:
+-   - navigating to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login", waiting until "load"
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:146)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:132)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:132)
+at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:429)
+at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:958)
+at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:43)
+at com.microsoft.playwright.Page.navigate(Page.java:5549)
+at Tests.Test1.verifyPage(Test1.java:27)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at _ProgressController.run (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:11750:32)
+    at _FrameDispatcher._runCommand (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18203:35)
+    at DispatcherConnection.dispatch (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18408:44)
+}
+Call log:
+-   - navigating to "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login", waiting until "load"
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:266)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:222)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:144)
+... 33 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.TimeoutError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPage -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.Test1@149e0f5d]" started-at="2026-07-15T23:46:07 IST" name="teardown" finished-at="2026-07-15T23:46:07 IST" duration-ms="624" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.Test1@149e0f5d]" started-at="2026-07-15T23:46:07 IST" name="setup" finished-at="2026-07-15T23:46:09 IST" duration-ms="1617" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyTitle()[pri:0, instance:Tests.Test1@149e0f5d]" started-at="2026-07-15T23:46:09 IST" name="verifyTitle" finished-at="2026-07-15T23:46:12 IST" duration-ms="3072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTitle -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.Test1@149e0f5d]" started-at="2026-07-15T23:46:12 IST" name="teardown" finished-at="2026-07-15T23:46:13 IST" duration-ms="652" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Tests.Test1 -->
+      <class name="Tests.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.LoginTest@353d0772]" started-at="2026-07-15T23:46:13 IST" name="setup" finished-at="2026-07-15T23:46:14 IST" duration-ms="1705" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test()[pri:0, instance:Tests.LoginTest@353d0772]" started-at="2026-07-15T23:46:14 IST" name="test" finished-at="2026-07-15T23:46:48 IST" duration-ms="33097" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.LoginTest@2473d930]" started-at="2026-07-15T20:09:21 IST" name="teardown" finished-at="2026-07-15T20:09:21 IST" duration-ms="175" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.LoginTest@353d0772]" started-at="2026-07-15T23:46:48 IST" name="teardown" finished-at="2026-07-15T23:46:48 IST" duration-ms="597" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- Tests.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- BasicTests -->
+  </suite> <!-- PlaywrightSuite -->
 </testng-results>

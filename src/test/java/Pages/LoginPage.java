@@ -18,7 +18,7 @@ public class LoginPage {
 
 	// Page Action Methods
 	public void navigate() {
-		page.navigate("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		page.navigate("https://practicetestautomation.com/practice-test-login/");
 	}
 
 	public void login(String username, String password) {

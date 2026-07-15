@@ -8,11 +8,49 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">39,454</td><td></td><td></td></tr>
+<tr><th colspan="8">PlaywrightSuite</th></tr>
+<tr><td><a href="#t0">BasicTests</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">77,742</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Tests.LoginTest</td><td><a href="#m0">test</a></td><td rowspan="1">1784126323952</td><td rowspan="1">37478</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">PlaywrightSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">BasicTests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Tests.Test1</td><td><a href="#m0">verifyPage</a></td><td rowspan="1">1784139335148</td><td rowspan="1">32054</td></tr><tr><th colspan="4">BasicTests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Tests.LoginTest</td><td><a href="#m1">test</a></td><td rowspan="1">1784139374904</td><td rowspan="1">33097</td></tr><tr class="passedodd"><td rowspan="1">Tests.Test1</td><td><a href="#m2">verifyTitle</a></td><td rowspan="1">1784139369466</td><td rowspan="1">3072</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">Tests.LoginTest#test</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>BasicTests</h2><h3 id="m0">Tests.Test1#verifyPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at _ProgressController.run (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:11750:32)
+    at _FrameDispatcher._runCommand (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18203:35)
+    at DispatcherConnection.dispatch (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18408:44)
+}
+Call log:
+-   - navigating to &quot;https://opensource-demo.orangehrmlive.com/web/index.php/auth/login&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:146)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:132)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:132)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:429)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:958)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:43)
+	at com.microsoft.playwright.Page.navigate(Page.java:5549)
+	at Tests.Test1.verifyPage(Test1.java:27)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message=&apos;Timeout 30000ms exceeded.
+  name=&apos;TimeoutError
+  stack=&apos;TimeoutError: Timeout 30000ms exceeded.
+    at _ProgressController.run (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:11750:32)
+    at _FrameDispatcher._runCommand (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18203:35)
+    at DispatcherConnection.dispatch (C:\Users\Siritek\AppData\Local\Temp\playwright-java-7630017691855097722\package\lib\coreBundle.js:18408:44)
+}
+Call log:
+-   - navigating to &quot;https://opensource-demo.orangehrmlive.com/web/index.php/auth/login&quot;, waiting until &quot;load&quot;
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:266)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:222)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:144)
+	... 33 more
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Tests.LoginTest#test</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Tests.Test1#verifyTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -1,0 +1,47 @@
+Playwright notes:
+
+Constructor: This function which has same name as the class name & also it doesn't have the
+             return type.
+Private: That particular variable will be private to particular class, it doesn't have return
+		 type.
+Final: Once assigned a value it is fix can't be changed.
+SetHeadless(False/True): Will run with less memory in the background.
+
+teardown():
+
+TestNG: We can run testNG with help of creatin testNG.xml file with the helpof some command lines= mvn clean test -DsuiteXmlFile = testng.xml.
+	In other way we can run it from the testNG.xml file by clicking Run AS > testng suite{TestNg plugin must be added for this to run the file.}
+
+Record a Login test using Codegen:
+Step-1: mvn exec:java -Dexec.args="codegen
+		https://practicetestautomation.com/practice-test-login/"
+		URL: could be changed according to the requriment.
+Step-2: Record the login scenario & copy the java code in a new class loginTest.java.
+Step-3: Extend from BaseTest, Update @Test annotation from testNG.
+Step-4: Save & Run.
+Step-5: Can also upadte the testNG.xml file & run from command line.
+		URL: mvn clean test -DsuiteXmlFile=testNG.xml
+
+Page Object Model{POM}: It's a design patter used in the test automation.
+						* Where Object Locator and Object Action Methods communicate with Test Scrpits that call Object Methods.
+						* Code becomes clean & clear, Objects and Object Action Methods are stored separately and Test Scripts are stored separately.
+						* When any changes happend on the Action Methods just go to-> Page classof the particular page and make the changes accordingly.
+						* It helps to write clean, reuseable and maintainable test code.
+							Example: Each webpage=One class(LoginPage, HomePage)
+
+That class contains:
+Locator: How to find elements on the page [like buttons, inputs]
+Action: What you can do [click, type, select ect]
+How it helps-> Reusability, Readability, Maintainablity, Clean Code
+
+Step-1: Understand the use case that we have to automate
+		* Go to Login Page
+		* Enter UserName, Password
+		* Click Login/ Press Enter
+		* Verify dashboard page is dispalyed [Dashboard Heading]
+Step-2: Create Page classes under pages package according to the no. of pages we have to
+		interact Example: For a LoginPage create 2 classes [LoginPage.java & HomePage.java]
+Step-3: Under test package create a class LoginTest.java.
+Step-4: Create/Record test scripts fpr the LoginTest.java.
+Step-5: In LoginPage create add object locators & methods for actions on loginPage.java.
+Step-6: Do the same in HomePage.java.
