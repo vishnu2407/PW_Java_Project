@@ -1,0 +1,8 @@
+<suite name="PlaywrightSuite">
+	<test name="BasicTests">
+		<classes>
+			<class name="Tests.Test1" />
+			<class name="Tests.LoginTest" />
+		</classes>
+	</test>
+</suite>
