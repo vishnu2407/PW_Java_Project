@@ -34,6 +34,7 @@ Locator: How to find elements on the page [like buttons, inputs]
 Action: What you can do [click, type, select ect]
 How it helps-> Reusability, Readability, Maintainablity, Clean Code
 
+Page Object Model:
 Step-1: Understand the use case that we have to automate
 		* Go to Login Page
 		* Enter UserName, Password
@@ -45,3 +46,21 @@ Step-3: Under test package create a class LoginTest.java.
 Step-4: Create/Record test scripts fpr the LoginTest.java.
 Step-5: In LoginPage create add object locators & methods for actions on loginPage.java.
 Step-6: Do the same in HomePage.java.
+Step-7: Now in LogiTest.java create objects for Login Page & Home Page.
+Step-8: Replace Scripts to call function's from page classes save & run.
+Step-9: Add to testNG.XML run Using testNG.xml.
+
+Extent Reports:
+Step-1: Add extent reports dependency in Pom.xml.
+Step-2: Create ExtentManage.java in src/test/java/util.
+Step-3: Update the BaseTest.java.
+Step-4: Use Login in your test [Optional].
+Step-5: Run your test as testNG.xml or from cmd mvn clean test.
+Step-6: Check Reports at test-output/ExtentReport.html.
+Step-7: Can try skipping a test by adding the throw new skipException("Skipping for now").
+
+Extent Reports by Screenshots on Failure:
+Step-1: Create Screenshots in Utils package.
+Step-2: Update in BaseTest to take Screenshots on failure in @AfterMethod.
+Step-3: Create folder (if needed) test-output/Screenshots
+Step-4: Save & Run the program.

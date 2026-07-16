@@ -1,38 +1,87 @@
 package Tests;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
-import com.microsoft.playwright.options.*;
+import Pages.HomePage;
+import Pages.LoginPage;
 import Base.baseTest1;
+import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 public class LoginTest extends baseTest1 {
 	@Test
-	public void test() {
-		try (Playwright playwright = Playwright.create()) {
-			Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false));
-			BrowserContext context = browser.newContext();
-			Page page = context.newPage();
-			page.navigate("https://practicetestautomation.com/practice-test-login/");
-			page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Username")).click();
-			page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Username")).fill("student");
-			page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Password")).click();
-			page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Password")).fill("Password123");
-			page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Submit")).click();
-			page.navigate("https://practicetestautomation.com/logged-in-successfully/");
-			page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Practice").setExact(true)).click();
-			page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Blog")).click();
-			page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Contact")).click();
-			page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Courses")).click();
-			page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Home")).click();
-			page.getByRole(AriaRole.IMG, new Page.GetByRoleOptions().setName("Dmitry Shyshkin, your")).click();
-			page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Close")).click();
+	public void test1() {
+		//Login Page
+		test.info("Navigating to Login page:");
+		page.navigate("https://practicetestautomation.com/practice-test-login/");
+		LoginPage loginPage = new LoginPage(page);
+		test.info("Entering UserName and Password");
+		loginPage.login("student", "Password123");
+		test.info("Verify Login Button");
+		Assert.assertTrue(loginPage.isLoginSuccessful(), "The login success page was not displayed.");
 
-		}
+		//Home page
+		/*HomePage homePage = new HomePage(page);
+		test.info("Clicking Home Page");
+		homePage.clickHome();
+		test.info("Clicking Practice Page");
+		homePage.clickPractice();
+		test.info("Clicking Courses Page");
+		homePage.clickCourses();
+		test.info("Clicking Contact Page");
+		homePage.clickContact();*/
+
+
+	}
+	@Test
+	public void test2() {
+		test.skip("This Test is Skipped");
+		throw new SkipException("This Test is Skipped");
+	}
+
+	@Test
+	public void test3() {
+		//Login Page
+		test.info("Navigating to Login page:");
+		page.navigate("https://practicetestautomation.com/practice-test-login/");
+		LoginPage loginPage = new LoginPage(page);
+		test.info("Adding UserName and Password");
+		loginPage.login("student", "Password123");
+		test.info("Clicking Login Button");
+		Assert.assertTrue(loginPage.isLoginSuccessful(), "The login success page was not displayed.");
+
+		//Home page
+		HomePage homePage = new HomePage(page);
+		test.info("Clicking Home Page");
+		homePage.clickHome();
+		test.info("Clicking Practice Page");
+		homePage.clickPractice();
+		test.info("Clicking Courses Page");
+		homePage.clickCourses();
+		test.info("Clicking Contact Page");
+		homePage.clickContact();
+	}
+
+	@Test
+	public void test4() {
+		//Login Page
+		/*test.info("Navigating to Login page:");
+		page.navigate("https://practicetestautomation.com/practice-test-login/");
+		LoginPage loginPage = new LoginPage(page);
+		test.info("Adding UserName and Password");
+		loginPage.login("student", "Password123");
+		test.info("Clicking Login Button");
+		Assert.assertTrue(loginPage.isLoginSuccessful(), "The login success page was not displayed.");*/
+
+		//Home page
+		HomePage homePage = new HomePage(page);
+		test.info("Clicking Home Page");
+		homePage.clickHome();
+		test.info("Clicking Practice Page");
+		homePage.clickPractice();
+		test.info("Clicking Courses Page");
+		homePage.clickCourses();
+		test.info("Clicking Contact Page");
+		homePage.clickContact();
 	}
 
 }
