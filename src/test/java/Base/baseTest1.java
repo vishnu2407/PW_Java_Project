@@ -11,7 +11,6 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-
 import java.lang.reflect.Method;
 
 public class baseTest1 {
@@ -32,6 +31,7 @@ public class baseTest1 {
 		browser= playwright.chromium().launch(
 				new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false).setSlowMo(1000));
 		page = browser.newPage();
+		page.setDefaultTimeout(4000);
 	}
 	
 	@AfterMethod //annotation from testNG
@@ -39,11 +39,12 @@ public class baseTest1 {
 		//Reporting Logic
 		if (result.getStatus() == ITestResult.FAILURE) {
 			test.fail(result.getThrowable());
-			//Capture and attach Screenshot
-			String screenshotPath = ScreenshotsUtil.takeScreenshot(page, result.getName());
-			test.addScreenCaptureFromPath(screenshotPath);
+			test.addScreenCaptureFromBase64String(
+					ScreenshotsUtil.takeScreenshotAsBase64(page), "Failure screenshot");
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			test.pass("Test passed");
+			test.addScreenCaptureFromBase64String(
+					ScreenshotsUtil.takeScreenshotAsBase64(page), "Test screenshot");
 		} else{
 			test.skip("Test skipped");
 	    }

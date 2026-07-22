@@ -1,5 +1,63 @@
 Playwright notes:
 
+GitHub Repository:
+Git Bash combines standard navigation commands with core Git version control commands to help Windows manage source code smoothly. [1]
+📂 Navigation & File Management
+These basic Bash commands help you move around folders and manage files before applying Git operations.
+• : Prints the current absolute path of your active folder.
+• : Lists files and directories in your current folder.
+• : Lists all contents, including hidden files like .
+• : Changes your directory to the specified folder path.
+• : Moves up one directory level.
+• : Creates a brand new folder.
+• : Creates an empty file (e.g., ).
+• : Permanently deletes a specified file.
+• : Clears the entire terminal window for a clean screen. [4, 5, 6, 7, 8]
+
+⚙️ Initial Setup
+Use these configuration commands right after installing Git for Windows to establish your user identity.
+
+• : Sets your commit author name globally.
+• : Sets your commit author email globally.
+• : Initializes a brand new local repository in your current folder.
+• : Downloads an entire remote repository to your local computer. [1, 4, 10, 11, 12]
+
+🛠️ Working with Changes (Staging & Committing)
+These day-to-day commands track, stage, and save snapshots of your files.
+
+• : Shows which files are modified, untracked, or ready to be staged.
+• : Moves a specific file to the staging area.
+• : Stages all new, modified, and deleted files at once.
+• : Permanently saves your staged snapshot with a descriptive message.
+• : Displays your chronological commit history in a clean, compact format.
+• : Shows exact line-by-line differences of unstaged local changes. [4, 5, 14]
+
+🌿 Branching & Merging
+Isolate features or experiments securely without affecting your primary codebase.
+
+• : Lists all local branches in the repository.
+• : Generates a new branch without switching to it.
+• : Switches your active environment to a different branch.
+• : Creates a completely new branch and immediately switches to it.
+• : Combines the specified branch's history into your current branch. [4, 11, 13, 14, 18, 19]
+
+🌐 Synchronization (Remote Repositories)
+Coordinate project changes across platforms like GitHub, GitLab, or Bitbucket.
+
+• : Connects your local repository to a remote server link.
+• : Verifies the specific URLs connected to your local repository.
+• : Pulls down records of remote changes without overwriting local work.
+• : Downloads updates and immediately merges them into your active branch.
+• : Uploads your local commits to the remote database and links the branch paths. [1, 14, 18]
+
+If you are trying to complete a specific task, let me know:
+
+• Are you setting up a repository for the first time, or working with an existing project?
+• Do you need to connect your local files to GitHub or another hosting platform?
+• Are you encountering any errors like merge conflicts or access issues?
+
+
+
 Constructor: This function which has same name as the class name & also it doesn't have the
              return type.
 Private: That particular variable will be private to particular class, it doesn't have return
@@ -64,3 +122,28 @@ Step-1: Create Screenshots in Utils package.
 Step-2: Update in BaseTest to take Screenshots on failure in @AfterMethod.
 Step-3: Create folder (if needed) test-output/Screenshots
 Step-4: Save & Run the program.
+
+Command Line step-by-step process
+Step-1: Change the directory of the default one to the project directory
+Step-2: Use mvn clean test
+        *Cleans previous build results.
+        *Compile & run all @Test classes in the floder src/test/java packages, for running the full suite.
+Step-3: Use mvn -Dtest=LoginTest test
+         *Run a specific test class
+         *Login Test = class name
+         *Runs only LoginTest.java file.
+Step-4: Use mvn -Dtest=LOginTest#MethodName test
+        *Run specific method in a test class.
+        *Formate: ClassName#MethodName.
+Step-5: Use mvn clean test -DsuiteXmlFile=testNG.XML file
+        *Run tests using testNG.xml file.
+        *Good for running test groups,  parallel tests, ect,.
+
+Locators: Queries you use to find & interact with elements[buttons, inputs, links, ect] on a web page
+Step-1: Create a new java class in the floder src/test/java packages LocatorTest.java.
+Step-2: Add a function testAllLocators() & add testNG annotation @Test.
+Step-3: Navigate to the URL of the web page.
+Step-4: Now create locators from the objects as needed for the test.
+
+Do's: Use Id, name, value, getByText() for buttons, getByRole() for accessibility.
+Don'ts: Avoid auto-generated classes, absolute Xpaths, don't hardcode index unless it is stable.
